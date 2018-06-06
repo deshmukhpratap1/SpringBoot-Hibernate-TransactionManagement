@@ -38,7 +38,6 @@ public class AccountService {
 		    return ResponseEntity.created(location).build();
 	}
 
-
 	public Resource<Account> getAccountDetails(int id) {
 		Optional<Account> account = accountRepository.findById(id);
 
@@ -53,6 +52,7 @@ public class AccountService {
 
 	@Transactional(readOnly = true)
 	public Resource<Account> transferFund(int from, int to, int amount) throws Exception {
+		System.out.println("0");
 		Resource<Account> fromAccount = this.getAccountDetails(from);
 		System.out.println("1");
 		Resource<Account> toAccount = this.getAccountDetails(to);

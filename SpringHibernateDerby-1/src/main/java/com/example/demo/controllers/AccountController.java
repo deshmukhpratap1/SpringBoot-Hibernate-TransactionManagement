@@ -51,7 +51,7 @@ public class AccountController {
 
 	@PostMapping("/transferFund")
 	public @ResponseBody Resource<Account> transferFund(@RequestBody TransferRequest transferRequest) {
-		System.out.println("here...");
+		System.out.println("transferRequest=" + transferRequest.toString());
 		Resource<Account> account = null;
 		try {
 			account = accountService.transferFund(transferRequest.getFrom(), transferRequest.getTo(),
